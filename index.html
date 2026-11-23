@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1c2838">
+<title>Living Corporation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><span class="logo">▦</span><div><b>LIVING CORPORATION</b><small>Pixel office life simulator</small></div></div>
+  <div class="stats"><span>💰 <b id="cash">₱125,000</b></span><span>📅 <b id="clock">DAY 1 · 09:00</b></span><span>👥 <b id="headcount">6</b></span></div>
+  <button id="pause" class="pixel-btn">Ⅱ PAUSE</button>
+</header>
+<main class="columns">
+<section class="office panel">
+  <div class="bar"><span>PIXELWORKS HEADQUARTERS</span><span class="live">● SIMULATION LIVE</span></div>
+  <div class="canvas-box"><canvas id="office" width="960" height="620"></canvas></div>
+  <div class="footnote">TAP A WORKER TO TALK · PINCH/SCROLL TO ZOOM IS COMING SOON</div>
+</section>
+<aside class="middle">
+<section class="panel">
+  <div class="bar">EMPLOYEE DIRECTORY <span id="count">6</span></div>
+  <div id="employees" class="employees"></div>
+</section>
+<section class="panel chat">
+  <div class="bar">💬 EMPLOYEE CHAT <span id="chatName">SELECT A WORKER</span></div>
+  <div id="chatLog" class="chatlog"><p class="muted">Select an employee to start a conversation.</p></div>
+  <form id="chatForm"><input id="chatInput" placeholder="Talk to your employee..." maxlength="500" disabled><button class="pixel-btn" id="send" disabled>SEND</button></form>
+  <small class="muted pad">Conversations are simulated locally in this GitHub Pages edition.</small>
+</section>
+</aside>
+<aside class="right">
+<section class="panel">
+  <div class="bar">🛡 OWNER APPROVALS <span id="pendingCount">0</span></div>
+  <div id="approvals" class="approvals"><p class="muted">No pending requests.</p></div>
+</section>
+<section class="panel">
+  <div class="bar">📋 ASSIGN A TASK</div>
+  <form id="taskForm" class="form">
+    <label>Assign to<select id="taskEmployee"></select></label>
+    <label>Task title<input id="taskTitle" required maxlength="100" placeholder="Research the gaming market"></label>
+    <label>Instructions<textarea id="taskDescription" rows="2" placeholder="What should they do?"></textarea></label>
+    <button class="pixel-btn green">SUBMIT FOR APPROVAL</button>
+  </form>
+</section>
+<section class="panel">
+  <div class="bar">🧑‍💼 HR RECRUITMENT</div>
+  <form id="hireForm" class="form">
+    <label>Candidate name<input id="hireName" required placeholder="New employee"></label>
+    <label>Position<input id="hireRole" required placeholder="Game Developer"></label>
+    <label>Department<input id="hireDept" required placeholder="Gaming"></label>
+    <button class="pixel-btn">HR PROPOSE HIRE</button>
+  </form>
+</section>
+<section class="panel">
+  <div class="bar">📡 COMPANY FEED</div><div id="feed" class="feed"></div>
+</section>
+</aside>
+</main>
+<footer>GITHUB PAGES EDITION · AUTO-SAVES IN THIS BROWSER · <button id="reset" class="text-btn">RESET WORLD</button></footer>
+</div>
+<script src="game.js"></script><script src="app.js"></script>
+</body></html>
